@@ -1,0 +1,14 @@
+{
+  "name": "simbody",
+  "version": "1.0.0",
+  "description": "SimCity, but the city is a human body: zone tissue, lay blood vessels, farm your microbiome and fight off infections.",
+  "scripts": {
+    "start": "npx --yes http-server -p 8080 -c-1 .",
+    "test": "node tests/run.js",
+    "balance": "node tests/balance.js",
+    "neglect": "node tests/neglect.js"
+  },
+  "keywords": ["game", "simulation", "biology", "simcity", "canvas"],
+  "license": "MIT",
+  "private": true
+}
