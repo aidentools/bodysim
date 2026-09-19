@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>simBody — a body simulator</title>
+<meta name="description" content="SimCity, but the city is a human body. Zone tissue, lay blood vessels, farm your microbiome and fight off whatever gets in.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🫀</text></svg>">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="app">
+
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo">sim<b>Body</b></span>
+      <span class="tag">metropolitan physiology</span>
+    </div>
+
+    <div class="readouts">
+      <div class="readout"><label>Day</label><span id="r-day">1</span></div>
+      <div class="readout"><label>Age</label><span id="r-age">24.0</span></div>
+      <div class="readout wide"><label>ATP</label><span id="r-atp">340</span><small id="r-net">+0.0/day</small></div>
+      <div class="readout"><label>Health</label><span id="r-health" class="big">92</span></div>
+    </div>
+
+    <div class="controls">
+      <div class="speeds" id="speeds"></div>
+      <button class="btn" id="btn-save" title="Save to this browser">Save</button>
+      <button class="btn" id="btn-load" title="Load last save">Load</button>
+      <button class="btn" id="btn-new" title="Start a new body">New</button>
+      <button class="btn" id="btn-help" title="How to play">?</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <aside id="left" class="panel-col">
+      <section class="panel">
+        <h2>Build</h2>
+        <div id="toolbar" class="toolgrid"></div>
+        <p id="tool-desc" class="hint">Pick a tool, then click (or drag) on the body.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Lifestyle</h2>
+        <div id="policies"></div>
+      </section>
+    </aside>
+
+    <section id="centre">
+      <div id="overlays" class="overlaybar"></div>
+      <div id="stage">
+        <canvas id="map" aria-label="Body map"></canvas>
+      </div>
+      <div id="legend" class="legend"></div>
+      <div id="inspector" class="inspector">
+        <b>Inspector</b>
+        <span class="hint">Hover a tile to read it.</span>
+      </div>
+    </section>
+
+    <aside id="right" class="panel-col">
+      <section class="panel">
+        <h2>Vitals</h2>
+        <div id="vitals"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Treatments</h2>
+        <div id="treatments" class="treatgrid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Threats</h2>
+        <div id="outbreaks"><p class="hint">No active infections. Enjoy it.</p></div>
+      </section>
+
+      <section class="panel">
+        <h2>Organs</h2>
+        <div id="organs" class="organgrid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Advisors</h2>
+        <div id="advisors"></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer id="ticker">
+    <div id="log"></div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <h2 id="modal-title">simBody</h2>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button class="btn primary" id="modal-close">Got it</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/map.js"></script>
+<script src="js/state.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/actions.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
